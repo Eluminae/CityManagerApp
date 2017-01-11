@@ -67,16 +67,13 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse{
             citiesTable[i] = (City) cities.get(i);
         }
 
-
-        final ArrayList<ApiRequestElement> citiesNameArrayList = new ArrayList<ApiRequestElement>();
-
         // our adapter instance
         ArrayAdapterCity adapter = new ArrayAdapterCity(this, R.layout.list_view, citiesTable);
 
         // create a new ListView, set the adapter and item click listener
 
         this.listview.setAdapter(adapter);
-        this.listview.setOnItemClickListener(new OnItemClickListenerListViewItem());
+        this.listview.setOnItemClickListener(new OnItemClickListenerListViewItem(citiesTable));
 
     }
 }

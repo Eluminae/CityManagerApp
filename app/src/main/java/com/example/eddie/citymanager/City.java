@@ -3,11 +3,13 @@ package com.example.eddie.citymanager;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
+
 /**
  * Created by lp on 02/12/2016.
  */
 
-public class City extends ApiRequestElement {
+public class City extends ApiRequestElement implements Serializable {
 
     String nomVille;
     String maj;

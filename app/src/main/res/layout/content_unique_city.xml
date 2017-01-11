@@ -13,4 +13,156 @@
     tools:context="com.example.eddie.citymanager.UniqueCityActivity"
     tools:showIn="@layout/activity_unique_city">
 
+    <TextView
+        android:text="nomVille"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:id="@+id/nomVille"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="24sp"
+        android:textAlignment="center" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/codePostalLabel"
+        android:layout_toRightOf="@+id/codePostalLabel"
+        android:layout_marginLeft="37dp"
+        android:layout_marginStart="37dp"
+        android:id="@+id/codePostal"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/codeINSEELabel"
+        android:layout_alignLeft="@+id/codePostal"
+        android:layout_alignStart="@+id/codePostal"
+        android:id="@+id/codeINSEE"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/codeRegionLabel"
+        android:layout_alignLeft="@+id/codeINSEE"
+        android:layout_alignStart="@+id/codeINSEE"
+        android:id="@+id/codeRegion"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/LatitudeLabel"
+        android:layout_alignLeft="@+id/codeRegion"
+        android:layout_alignStart="@+id/codeRegion"
+        android:id="@+id/latitude"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/longitudeLabel"
+        android:layout_alignLeft="@+id/latitude"
+        android:layout_alignStart="@+id/latitude"
+        android:id="@+id/longitude"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/eloignementLabel"
+        android:layout_alignLeft="@+id/longitude"
+        android:layout_alignStart="@+id/longitude"
+        android:id="@+id/eloignement"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Latitude :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:id="@+id/LatitudeLabel"
+        android:textAlignment="textEnd"
+        android:layout_below="@+id/codeRegionLabel"
+        android:layout_alignLeft="@+id/longitudeLabel"
+        android:layout_alignStart="@+id/longitudeLabel"
+        android:layout_alignRight="@+id/eloignementLabel"
+        android:layout_alignEnd="@+id/eloignementLabel" />
+
+    <TextView
+        android:text="Code région :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:id="@+id/codeRegionLabel"
+        android:textAlignment="textEnd"
+        android:layout_below="@+id/codeINSEELabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/LatitudeLabel"
+        android:layout_alignEnd="@+id/LatitudeLabel" />
+
+    <TextView
+        android:text="Code INSEE :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:id="@+id/codeINSEELabel"
+        android:textAlignment="textEnd"
+        android:layout_below="@+id/codePostalLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/codePostal" />
+
+    <TextView
+        android:text="Code postal :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:id="@+id/codePostalLabel"
+        android:textAlignment="textEnd"
+        android:layout_below="@+id/nomVille"
+        android:layout_alignRight="@+id/LatitudeLabel"
+        android:layout_alignEnd="@+id/LatitudeLabel" />
+
+    <TextView
+        android:text="Longitude :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:id="@+id/longitudeLabel"
+        android:textAlignment="textEnd"
+        android:layout_below="@+id/LatitudeLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/eloignementLabel"
+        android:layout_alignEnd="@+id/eloignementLabel" />
+
+    <TextView
+        android:text="Éloignement :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:id="@+id/eloignementLabel"
+        android:textAlignment="textEnd"
+        android:layout_below="@+id/longitudeLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

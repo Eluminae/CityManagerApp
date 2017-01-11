@@ -13,6 +13,13 @@ import android.widget.Toast;
  */
 
     public class OnItemClickListenerListViewItem implements OnItemClickListener {
+
+    private City[] citiesTable;
+
+    public OnItemClickListenerListViewItem(City[] citiesTable) {
+        this.citiesTable = citiesTable;
+    }
+
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
@@ -28,6 +35,7 @@ import android.widget.Toast;
 
         Intent intent = new Intent(view.getContext(), UniqueCityActivity.class);
         intent.putExtra("cityId", listItemId);
+        intent.putExtra("city", this.citiesTable[position]);
         ((MainActivity) context).startActivityForResult(intent, 0);
 
         // just toast it
