@@ -1,15 +1,10 @@
 package com.example.eddie.citymanager;
 
 import android.content.Context;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -64,43 +59,25 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse{
 
     //this override the implemented method from asyncTask
     @Override
-    public void processFinish(ArrayList<ApiRequestElement> liste){
+    public void processFinish(ArrayList<ApiRequestElement> cities){
+        if (cities == null) cities = new ArrayList<ApiRequestElement>();
 
-        if (liste == null) liste = new ArrayList();
-
-        String[] values = new String[liste.size()];
-        for (int i=0; i<liste.size(); i++) {
-            values[i] = liste.get(i).toString();
+        City[] citiesTable = new City[cities.size()];
+        for (int i=0; i<cities.size(); i++) {
+            citiesTable[i] = (City) cities.get(i);
         }
 
-        final ArrayList<String> list = new ArrayList<String>();
-        for (int i = 0; i < values.length; ++i) {
-            list.add(values[i]);
-        }
-        final StableArrayAdapter adapter = new StableArrayAdapter(this,
-                android.R.layout.simple_list_item_1, list);
+
+        final ArrayList<ApiRequestElement> citiesNameArrayList = new ArrayList<ApiRequestElement>();
+
+        // our adapter instance
+        ArrayAdapterCity adapter = new ArrayAdapterCity(this, R.layout.list_view, citiesTable);
+
+        // create a new ListView, set the adapter and item click listener
+
         this.listview.setAdapter(adapter);
+        this.listview.setOnItemClickListener(new OnItemClickListenerListViewItem());
 
-        this.listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-            @Override
-            public void onItemClick(AdapterView<?> parent, final View view,
-                                    int position, long id) {
-                final String item = (String) parent.getItemAtPosition(position);
-
-                // ANIMATIONS
-                view.animate().setDuration(2000).alpha(0).withEndAction(new Runnable() {
-                    @Override
-                    public void run() {
-                        list.remove(item);
-                        adapter.notifyDataSetChanged();
-                        view.setAlpha(1);
-                    }
-                });
-            }
-
-        });
     }
 }
 
