@@ -23,6 +23,7 @@ public class GetApi {
 
     private String url = "http://android.misterbanal.net/";
     private String getter;
+    private RequestTask apiRequest = null;
 
     public GetApi(String getter, HashMap params, HashMap attributs){
         this.getter = getter;
@@ -48,11 +49,12 @@ public class GetApi {
         }
     }
 
-    public void execute() {
-        new RequestTask().execute(this.url, this.getter);
+    public void execute(RequestTask apiRequest) {
+        setApiRequest(apiRequest);
+        this.apiRequest.execute(this.url, this.getter);
     }
 
-    public ArrayList<ApiRequestElement> receive(ArrayList<ApiRequestElement> result) {
-        return result;
+    private void setApiRequest(RequestTask apiRequest) {
+        this.apiRequest = apiRequest;
     }
 }

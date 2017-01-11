@@ -20,13 +20,11 @@ import java.util.ArrayList;
 class RequestTask extends AsyncTask<Object, Void, ArrayList<ApiRequestElement>> {
 
     private Exception exception;
-    private GetApi apiConnection;
-    private Activity activity;
+    public AsyncResponse delegate = null;
 
     protected ArrayList<ApiRequestElement> doInBackground(Object... urls) {
 
         ArrayList<ApiRequestElement> elements = new ArrayList<ApiRequestElement>();
-        this.activity = (Activity) urls[1];
 
         try {
             URL url = new URL((String)urls[0]);
@@ -50,16 +48,21 @@ class RequestTask extends AsyncTask<Object, Void, ArrayList<ApiRequestElement>> 
                 ApiRequestElement requestElement = generateObject((String)urls[1], obj);
                 // On ajoute la personne à la liste
                 elements.add(requestElement);
+                //System.out.println(requestElement);
             }
 
         } catch (Exception e) {
             this.exception = e;
             return null;
         }
-        // On retourne la liste des personnes
+        // On retourne la liste
         return elements;
     }
 
+    @Override
+    protected void onPostExecute(ArrayList<ApiRequestElement> result) {
+        delegate.processFinish(result);
+    }
 
     public ApiRequestElement generateObject(String className, JSONObject json) throws JSONException {
         switch (className) {
