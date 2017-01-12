@@ -39,6 +39,6 @@ import android.widget.Toast;
         ((MainActivity) context).startActivityForResult(intent, 0);
 
         // just toast it
-        Toast.makeText(context, "Item: " + listItemText + ", Item ID: " + listItemId, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(context, "Item: " + listItemText + ", Item ID: " + listItemId, Toast.LENGTH_SHORT).show();
     }
 }
