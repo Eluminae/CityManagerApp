@@ -8,4 +8,4 @@ Cette partie constitue l'application android en elle même.
 En l'état actuel, l'application récupere les villes de l'API mais ne permet pas encore de les modifiers.
 
 Une vidéo démonstrative se trouve dans ce répository, dans le dossier démonstration.
-[Telecharger la vidéo de démonstration](https://github.com/Eluminae/CityManagerApp/blob/master/demonstration/demo.ogv)
+[vidéo de démonstration](https://github.com/Eluminae/CityManagerApp/raw/master/demonstration/demo.ogv)
