@@ -87,15 +87,9 @@ public class UniqueCityActivity extends AppCompatActivity implements OnMapReadyC
     //Listener object to handle the click events
     View.OnClickListener editClickListener = new View.OnClickListener() {
         public void onClick(View v) {
-            // TODO: update from BDD
-            // Update from mainActivity list
-            Intent data = new Intent();
-            City city = (City) getIntent().getSerializableExtra("city");
-            data.putExtra("city", city);
-            data.putExtra("action", "update");
-            // Activity finished ok, return the data
-            setResult(RESULT_OK, data);
-            finish();
+            Intent intent = new Intent(v.getContext(), EditCityActivity.class);
+            intent.putExtra("city", city);
+            startActivityForResult(intent, 0);
         }
     };
 
